@@ -1,0 +1,600 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #454545;
+    }
+
+html {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    overflow-y: scroll;
+    }
+html,
+.valign-inner,
+.aligned > .item {
+    line-height: 1.4;
+    font-size: 14px;
+    }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*======СТИЛИ "ФРЕЙМВОРКА" (базовые сущности)=======*/
+/*картинка не выходит за пределы контейнера и сохраняет ratio*/
+img {
+    border: none;
+    max-width: 100%;
+    height: auto;
+    }
+.lt-ie9 img {
+    width: auto; /*maxes images at their actual dimensions.*/
+    }
+
+/*ссылки*/
+a:link {
+    text-decoration: underline;
+    color: #12a7e7;
+    }
+a:visited {color:#12a7e7;text-decoration: underline;}
+a:hover, a:focus {text-decoration: none;color: #12a7e7;}
+a:active {
+    background-color: transparent;
+    }
+
+/*заголовки*/
+.hd_type_0 {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 8px;
+    }
+
+
+
+/*ширины*/
+.width0 {
+    width: 80px;
+    }
+.width1 {
+    width: 70px;
+    }
+.width2 {
+    width: 100px;
+    }
+.width3 {
+    width: 350px;
+    }
+.width5 {
+    width: 130px;
+    }
+
+
+/*таблицы*/
+.table {
+    width: 100%;
+    }
+.table td,
+.table th {
+    padding: 0;
+    vertical-align: top;
+    }
+
+/*дочерние селекторы для возможности безопасного вложения разных таблиц друг в друга*/
+.table_skin_0 > tbody > tr > th,
+.table_skin_0 > tfoot > tr > th,
+.table_skin_0 > thead > tr > th {
+    text-align: left;
+    }
+.table_skin_0 > tbody > tr > th,
+.table_skin_0 > tfoot > tr > th,
+.table_skin_0 > thead > tr > th,
+.table_skin_0 > tbody > tr > td,
+.table_skin_0 > tfoot > tr > td,
+.table_skin_0 > thead > tr > td {
+    padding: 20px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    vertical-align: middle;
+    }
+
+.table__cell_type_rel {
+    position: relative;
+    }
+
+/*типовой двухколоночный блок*/
+.bl-side {
+    float: left;
+    margin-right: 14px;
+    }
+.bl-main {
+    overflow: hidden;
+    }
+
+/*блоки с вертикальным выравниванием*/
+.valign0 {
+    min-height: 70px;
+    line-height: 70px;
+    }
+.valign-inner {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    }
+
+/*инпуты*/
+.input {
+    cursor: text;
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    border: 1px solid #c5c5c5;
+    background: #fff;
+    *overflow: hidden;
+    }
+.input_state_focus {
+    outline: none;
+    border-color: #5c5c5c;
+    }
+.input__field {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: url("../img/t0.png");
+    padding: 0 10px;
+    color: #1f1f1f;
+    font: 14px 'Helvetica Neue', 'Arial', sans-serif;
+    height: 34px;
+    display: block;
+    vertical-align: top;
+    text-align: left;
+    *float: right;
+    *height: auto;
+    outline: none;
+    }
+textarea.input__field {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    line-height: 1.3;
+    *width: 99%;
+    *padding-left: 10px;
+    *padding-right: 0;
+    }
+.lt-ie9 input.input__field {
+    line-height: 34px\0/;
+    padding-top: 0\0/;
+    padding-bottom: 0\0/;
+    *padding-top: 10px;
+    *padding-bottom: 10px;
+    }
+
+/*кнопки*/
+body .button {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    box-sizing: border-box;
+    width: auto;
+    cursor: pointer;
+    font: 700 11px/1 'Helvetica Neue', 'Arial', sans-serif;
+    margin: 0;
+    overflow: visible;
+    height: 39px;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap !important;
+    position: relative;
+    vertical-align: top;
+    padding: 0 18px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: 1px solid #00afdf;
+    border-radius: 5px;
+    background-clip: padding-box;
+    background-color: #00afdf;
+    box-shadow: 0 0 3px rgba(12, 69, 88, .6);
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDE2MyAzOSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSItMS40MjEwODU0NzE1MjAyZS0xNCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBhZmRmIiBzdG9wLW9wYWNpdHk9IjEiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDhiZmYwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgPC9saW5lYXJHcmFkaWVudD4KCjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNjMiIGhlaWdodD0iMzkiIGZpbGw9InVybCgjaGF0MCkiIC8+Cjwvc3ZnPg==);
+    background-image: linear-gradient(to top, #00afdf 0%, #08bff0 100%);
+
+    }
+body .button:hover, body .button:focus {
+    background-color: #3bcbf1;
+    box-shadow: 0 0 3px rgba(12,69,88,.6);
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEyMiAzNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSItMS40MjEwODU0NzE1MjAyZS0xNCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDAwIiBzdG9wLW9wYWNpdHk9IjAuMTQiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmVmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMTQiLz4KICAgPC9saW5lYXJHcmFkaWVudD4KCjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjIiIGhlaWdodD0iMzYiIGZpbGw9InVybCgjaGF0MCkiIC8+Cjwvc3ZnPg==);
+    background-image: linear-gradient(to top, rgba(0,0,0,.14) 0%, rgba(255,255,255,.14) 100%);
+
+    }
+body .button:active,
+body .button.active {
+    padding-top: 1px;
+    background-color: #00afdf;
+    box-shadow: inset 0 1px 0 #009ec9;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEyMyAzOSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSItMS40MjEwODU0NzE1MjAyZS0xNCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBhZmRmIiBzdG9wLW9wYWNpdHk9IjEiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDhiZmYwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgPC9saW5lYXJHcmFkaWVudD4KCjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjMiIGhlaWdodD0iMzkiIGZpbGw9InVybCgjaGF0MCkiIC8+Cjwvc3ZnPg==);
+    background-image: linear-gradient(to top, #00afdf 0%, #08bff0 100%);
+    }
+body .button_type_fake {
+    line-height: 38px;
+    }
+.button__text,
+.button__icon {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 4px;
+    position: relative;
+    }
+.button_type_fake .button__text,
+.button_type_fake .button__icon {
+    vertical-align: top;
+    }
+.button_type_fake .button__icon {
+    height: 100%;
+    }
+.button__text {
+    top: -1px;
+    }
+
+/*выравнивание*/
+.tar {
+    text-align: right;
+    }
+
+
+
+
+/*прочие сущности*/
+.bw {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    }
+.db {
+    display: block;
+    }
+
+
+/*======СТИЛИ ПРИЛОЖЕНИЯ (специфичное описание конкретных элементов)=======*/
+
+/*контент*/
+.content {
+    width: 850px;
+    margin: 0 auto;
+    padding-top: 100px;
+    }
+
+/*корзина*/
+.basket-outer {
+    min-height: 400px;
+    }
+.basket-outer.loading {
+    background: url("../img/preloader.GIF") 50% 200px no-repeat;
+    }
+.basket-wrap {
+    transition: opacity .3s;
+    }
+.loading .basket-wrap {
+    opacity: 0;
+    }
+
+.basket__empty-block,
+.basket__submitted-block,
+.basket_state_empty .basket__form,
+.basket_state_submitted .basket__form {
+    display: none;
+    }
+.basket_state_empty .basket__empty-block,
+.basket_state_submitted .basket__submitted-block {
+    display: block;
+    }
+.basket__empty-block,
+.basket__submitted-block {
+    font-size: 24px;
+    text-align: center;
+    }
+
+/*контрол удаления элемента*/
+.control_func_del {
+    background: url(../img/i0.png) 0 0 no-repeat;
+    width: 17px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    z-index: 1;
+    cursor: pointer;
+    }
+.table_skin_0 .control_func_del {
+    right: -20px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*======СТИЛИ "ФРЕЙМВОРКА" (базовые сущности), которые должны помещаться после всех авторских стилей=======*/
+/*вертикальные отступы*/
+.gap20 {
+    margin-bottom: 40px;
+    }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

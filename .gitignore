@@ -1,0 +1,16 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+# osx noise
+.DS_Store
+profile
+
+# webstorm noise
+.idea
+
+
+node_modules
+*.zip
+build
+.grunt
+.tmp

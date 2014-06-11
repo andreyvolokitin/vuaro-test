@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css css/site.css -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- endbuild -->
+
+        <script src="js/vendor/modernizr-2.8.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a>.</p>
+        <![endif]-->
+
+        <div class="content">
+            <div class="basket-outer loading">
+                <div class="gap20 basket-wrap">
+                    <!--сюда будет вставляться корзина-->
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--шаблон корзины-->
+        <script type="text/x-jquery-tmpl" id="basket_tmpl">
+            <div class="basket">
+                <div class="gap20 basket__i">
+                    <form class="basket__form" action="#">
+                        <table class="gap20 table_skin_0 table">
+                            <thead>
+                                <tr>
+                                    <th>Наименование товара</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Стоимость</th>
+                                </tr>
+                            </thead>
+                            <tbody class="basket__src">
+                                <%=items%>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">
+                                        Сумма заказа
+                                    </td>
+                                    <td>
+                                        <div class="width5">
+                                            <span class="bw basket__total"></span> руб.
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="tar">
+                            <button type="submit" class="button">
+                                <span class="button__text">Подтвердить покупку</span>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="basket__empty-block">
+                        Корзина пуста.
+                    </div>
+                    <div class="basket__submitted-block">
+                        Спасибо за покупку! Корзина пуста.
+                    </div>
+                </div>
+                <form class="basket__add-unique-product" action="#">
+                    <div class="tar">
+                        <button type="submit" class="button">
+                            <span class="button__text">Добавить продукт с уникальным ID</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+
+	    </script>
+
+        <!--шаблон строки товара-->
+        <script type="text/x-jquery-tmpl" id="basket_item_tmpl">
+            <tr class="basket__product">
+                <td>
+                    <div class="width3 clearfix">
+                        <div class="bl-side width1">
+                            <a href="#"><img src="<%=pic%>" alt="" width="70" height="69"/></a>
+                        </div>
+                        <div class="bl-main">
+                            <div class="valign0">
+                                <div class="valign-inner">
+                                    <h3 class="bw hd_type_0">
+                                        <a href="#"><%=name%></a>
+                                        <input class="basket__product-id" name="product" value="<%=id%>" type="hidden"/>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="width2">
+                        <div class="bw basket__product-price">
+                            <%=price%>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="width0">
+                        <div class="input">
+                            <input class="input__field basket__product-count num-input" name="q_<%=id%>" value="<%=quantity%>" type="text">
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="table__cell_type_rel table__cell">
+                        <div class="width5">
+                            <div class="bw basket__product-sum">
+
+                            </div>
+                        </div>
+                        <div title="удалить" class="basket__product-delete control_func_del control"></div>
+                    </div>
+                </td>
+            </tr>
+
+	    </script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+        <!-- build:js js/site.js -->
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <!-- endbuild -->
+
+    </body>
+</html>
